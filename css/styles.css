@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap");
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -39,6 +47,8 @@ body {
     font-family: "Roboto", sans-serif, "Raleway", sans-serif;
     width: 1600px;
     color: var(--body-color);
+    margin: 0;
+    padding: 0;
 }
 .container {
     width: 1200px;
@@ -46,9 +56,7 @@ body {
     align-items: center;
     margin: 0 auto;
 }
-.section {
-    padding-top: 94px;
-}
+
 /* ===== Header styles =====*/
 
 /* ===== Nav logo styles =====*/
@@ -117,12 +125,19 @@ header .contacts {
     color: var(--button-bg-hover);
 }
 /* ===== End Header styles =====*/
+
 /* ===== Portfolio Styles ===== */
-.portfolio {
-    width: 1170px;
+/* ===== Button Styles ===== */
+.portfolio-section1 {
+    padding-top: 94px;
 }
 .buttons-items {
-    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-item:not(:last-child) {
+    margin-right: 8px;
 }
 .button {
     color: var(--header-color);
@@ -132,32 +147,58 @@ header .contacts {
     line-height: 1.625;
     text-align: center;
     letter-spacing: 0.03em;
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-        0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
+    border: none;
     background: var(--button-bg);
     cursor: pointer;
+    padding: 6px 22px;
 }
 .button:hover {
     color: var(--header-text-color);
     background: var(--button-bg-hover);
 }
-.projects ul {
-    list-style: none;
+/* ===== End button Styles ===== */
+/* ===== Projects Styles ===== */
+.portfolio-section2 {
+    padding-top: 34px;
+}
+.portfolio-section2 .container {
+    padding: 0;
+}
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1250px;
+    padding: 0;
 }
 .img-header {
+    font-weight: 700;
     font-size: 18px;
-    line-height: 2.111;
+    line-height: 2;
     letter-spacing: 0.06em;
+    color: var(--header-color);
+}
+.card-desc {
+    padding: 20px 24px;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
 }
 .img-desc {
+    font-size: 16px;
     line-height: 1.875;
     letter-spacing: 0.03em;
+    color: var(--contact-color);
 }
+/* ===== End projects Styles ===== */
 /* ===== End portfolio styles ===== */
 
 /* ===== Index styles =====*/
 /* ===== Head box styles =====*/
+.index-section1 {
+    background: var(--header-box-bg);
+}
 .head-box {
     background: var(--header-box-bg);
     display: flex;
@@ -195,6 +236,9 @@ header .contacts {
 }
 /* ===== End head box styles =====*/
 /* ===== Adv styles ===== */
+.index-section2 {
+    padding-top: 94px;
+}
 .adv-item-list {
     display: flex;
     align-items: center;
@@ -219,6 +263,10 @@ header .contacts {
 }
 /* ===== End Adv styles ===== */
 /* ===== We do styles ===== */
+.index-section3 {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
 .we-do-header {
     font-weight: 700;
     font-size: 36px;
@@ -236,8 +284,8 @@ header .contacts {
 }
 /* ===== End we do styles ===== */
 /* ===== Team styles ===== */
-.team {
-    background: var(--team-bg);
+.index-section4 {
+    background-color: var(--team-bg);
 }
 .team-header {
     padding-top: 94px;
@@ -281,6 +329,9 @@ header .contacts {
 }
 /* ===== End team styles ===== */
 /* ===== Footer styles ===== */
+.footer-section {
+    padding-top: 94px;
+}
 .footer {
     background-color: var(--header-box-bg);
     padding: 60px 0;
@@ -314,7 +365,7 @@ header .contacts {
     color: rgba(255, 255, 255, 0.6);
 }
 .footer-address-link:hover,
-.footer-address-link:focus{
+.footer-address-link:focus {
     color: var(--button-bg-hover);
 }
 /* ===== End Footer styles ===== */
