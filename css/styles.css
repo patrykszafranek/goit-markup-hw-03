@@ -1,4 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+p {
+    padding: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+.list {
+    list-style: none;
+}
+.link {
+    text-decoration: none;
+}
+img {
+    display: block;
+}
 :root {
     --body-color: #000000;
     --link-color: #2196f3;
@@ -8,48 +32,92 @@
     --header-text-color: #ffffff;
     --button-bg-hover: #2196f3;
     --button-bg: #f5f4fa;
+    --line-color: #ececec;
+    --team-bg: #f5f4fa;
 }
 body {
     font-family: "Roboto", sans-serif, "Raleway", sans-serif;
     width: 1600px;
     color: var(--body-color);
 }
+.container {
+    width: 1200px;
+    padding: 0 15px;
+    align-items: center;
+    margin: 0 auto;
+}
+.section {
+    padding-top: 94px;
+}
+/* ===== Header styles =====*/
 
-/* Portfolio styles */
-.logo {
+/* ===== Nav logo styles =====*/
+.nav-logo {
     font-family: "Raleway";
     font-weight: 700;
     font-size: 26px;
     line-height: 1.192;
     letter-spacing: 0.03em;
+    margin-right: 93px;
 }
-.logo a {
+.nav-logo-link {
     color: var(--body-color);
-    text-decoration: none;
 }
-.logo span {
+.nav-logo-link span {
     color: var(--link-color);
 }
-.nav a {
-    color: var(--header-color);
-    text-decoration: none;
+/* ===== End Nav logo styles =====*/
+
+.header {
+    border-bottom: 1px solid var(--line-color);
+}
+.header .container {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 25px;
+}
+.nav {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+.nav-list-link {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.142;
     letter-spacing: 0.02em;
+    color: var(--header-color);
 }
-.nav a:hover,
-.nav a:focus {
-    color: var(--link-color);
+.nav-list-link:hover,
+.nav-list-link:focus {
+    color: var(--button-bg-hover);
 }
-.contacts a {
-    text-decoration: none;
+.nav-list-item:not(:last-child) {
+    margin-right: 46px;
+}
+
+header .contacts {
+    margin-left: auto;
+}
+.contact-link {
+    color: var(--body-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.142;
+    letter-spacing: 0.02em;
     color: var(--contact-color);
+    margin-right: 50px;
 }
-.contacts a:hover,
-.contacts a:focus {
-    color: var(--link-color);
+.contact-link:hover,
+.contact-link:focus {
+    color: var(--button-bg-hover);
 }
+/* ===== End Header styles =====*/
+/* ===== Portfolio Styles ===== */
 .portfolio {
     width: 1170px;
 }
@@ -86,14 +154,19 @@ body {
     line-height: 1.875;
     letter-spacing: 0.03em;
 }
+/* ===== End portfolio styles ===== */
 
-/* Index styles */
-.header-box {
-    height: 600px;
+/* ===== Index styles =====*/
+/* ===== Head box styles =====*/
+.head-box {
     background: var(--header-box-bg);
-    margin-bottom: 94px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    justify-content: center;
 }
-.header-box > h1 {
+.head-box-header {
     color: var(--header-text-color);
     font-weight: 900;
     font-size: 44px;
@@ -101,20 +174,33 @@ body {
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    width: 696px;
+    margin-bottom: 30px;
 }
-.header-box > button {
+.head-box-button {
     width: 200px;
     height: 50px;
     color: var(--header-text-color);
-    background: var(--link-color);
+    background: var(--button-bg-hover);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--button-bg-hover);
     border-radius: 4px;
+    cursor: pointer;
 }
-.content {
-    width: 1170px;
+.button-text {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.06em;
 }
-.advantages > ul {
-    list-style: none;
+/* ===== End head box styles =====*/
+/* ===== Adv styles ===== */
+.adv-item-list {
+    display: flex;
+    align-items: center;
+}
+.adv-item:not(:last-child) {
+    margin-right: 30px;
 }
 .adv-header {
     font-weight: 700;
@@ -131,6 +217,8 @@ body {
     letter-spacing: 0.03em;
     color: var(--contact-color);
 }
+/* ===== End Adv styles ===== */
+/* ===== We do styles ===== */
 .we-do-header {
     font-weight: 700;
     font-size: 36px;
@@ -138,12 +226,22 @@ body {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--header-color);
+    margin-bottom: 50px;
 }
 .we-do-list {
-    list-style: none;
     display: flex;
 }
+.we-do-list-item:not(:last-child) {
+    margin-right: 30px;
+}
+/* ===== End we do styles ===== */
+/* ===== Team styles ===== */
+.team {
+    background: var(--team-bg);
+}
 .team-header {
+    padding-top: 94px;
+    padding-bottom: 50px;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.166;
@@ -151,9 +249,20 @@ body {
     letter-spacing: 0.03em;
 }
 .team-list {
-    list-style: none;
     display: flex;
+    gap: 30px;
+    justify-content: center;
 }
+.team-card {
+    margin: 0;
+    height: 368px;
+    background: #ffffff;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+        0px 2px 1px rgb(0 0 0 / 20%);
+    border-radius: 0px 0px 4px 4px;
+    margin: 0;
+}
+
 .team-name {
     font-weight: 500;
     font-size: 16px;
@@ -170,18 +279,42 @@ body {
     letter-spacing: 0.03em;
     color: var(--contact-color);
 }
-.address{  
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 24px;
-letter-spacing: 0.03em;
-color: #FFFFFF;
+/* ===== End team styles ===== */
+/* ===== Footer styles ===== */
+.footer {
+    background-color: var(--header-box-bg);
+    padding: 60px 0;
 }
-.address-box{
-height: 252px;
-background: #2F303A;
+.footer-logo {
+    font-family: "Raleway";
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.192;
+    letter-spacing: 0.03em;
 }
-.address-box > h2 >a{
+.footer-logo-link {
     color: var(--header-text-color);
 }
+.footer-logo-link span {
+    color: var(--link-color);
+}
+.footer-address-box {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+    color: var(--header-text-color);
+}
+.footer-address-link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+}
+.footer-address-link:hover,
+.footer-address-link:focus{
+    color: var(--button-bg-hover);
+}
+/* ===== End Footer styles ===== */
